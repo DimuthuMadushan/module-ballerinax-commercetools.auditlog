@@ -1599,7 +1599,7 @@
                 "description": "HTTP API authorization uses [OAuth2](https://datatracker.ietf.org/doc/html/rfc6750).\n\nClients must obtain an access token from the auth service using one of\nthe authorization flows described below, before they are able to make authorized requests\nto other Composable Commerce APIs. On successful completion of an authorization flow,\na client will be given an `access_token`, which they need to include in requests\nto authorized service endpoints via the HTTP `Authorization` header like this:\n",
                 "flows": {
                     "clientCredentials": {
-                        "tokenUrl": "https://auth.europe-west1.gcp.commercetools.com/oauth/token",
+                        "tokenUrl": "https://auth.us-central1.gcp.commercetools.com/oauth/token",
                         "scopes": {
                             "view_api_clients:{projectKey}": "",
                             "manage_api_clients:{projectKey}": "",

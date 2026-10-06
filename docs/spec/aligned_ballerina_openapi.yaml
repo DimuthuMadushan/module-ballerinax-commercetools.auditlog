@@ -1216,7 +1216,7 @@ components:
         '
       flows:
         clientCredentials:
-          tokenUrl: https://auth.europe-west1.gcp.commercetools.com/oauth/token
+          tokenUrl: https://auth.us-central1.gcp.commercetools.com/oauth/token
           scopes:
             view_api_clients:{projectKey}: ''
             manage_api_clients:{projectKey}: ''

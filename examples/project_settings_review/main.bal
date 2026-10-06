@@ -35,12 +35,12 @@ public function main() returns error? {
     io:println(string `Currencies: ${currencies}`);
 
     // Step 3: Report the cart and message settings
-    io:println(string `Carts are deleted ${project.carts.deleteDaysAfterLastModification} days after the last modification`);
+    io:println(string `New Carts are deleted by default ${project.carts.deleteDaysAfterLastModification} days after their last modification`);
     string messageState = project.messages.enabled ? "enabled" : "disabled";
     io:println(string `Messages are ${messageState}`);
 
     // Step 4: Fail loudly when a required currency is not configured
-    string[] required = regexp:split(re `,`, requiredCurrencies).map(c => c.trim());
+    string[] required = regexp:split(re `,`, requiredCurrencies).map(c => c.trim()).filter(c => c.length() > 0);
     string[] missing = required.filter(c => project.currencies.indexOf(c) is ());
     if missing.length() > 0 {
         return error(string `Project ${project.'key} is missing required currencies: ${string:'join(", ", ...missing)}`);

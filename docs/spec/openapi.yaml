@@ -291,48 +291,9 @@ components:
       discriminator:
         propertyName: typeId
         mapping:
-          associate-role: '#/components/schemas/AssociateRoleReference'
-          attribute-group: '#/components/schemas/AttributeGroupReference'
-          business-unit: '#/components/schemas/BusinessUnitReference'
-          cart-discount: '#/components/schemas/CartDiscountReference'
-          cart: '#/components/schemas/CartReference'
-          category: '#/components/schemas/CategoryReference'
-          channel: '#/components/schemas/ChannelReference'
-          key-value-document: '#/components/schemas/CustomObjectReference'
-          customer-email-token: '#/components/schemas/CustomerEmailTokenReference'
           customer-group: '#/components/schemas/CustomerGroupReference'
-          customer-password-token: '#/components/schemas/CustomerPasswordTokenReference'
           customer: '#/components/schemas/CustomerReference'
-          direct-discount: '#/components/schemas/DirectDiscountReference'
-          discount-code: '#/components/schemas/DiscountCodeReference'
-          discount-group: '#/components/schemas/DiscountGroupReference'
-          extension: '#/components/schemas/ExtensionReference'
-          inventory-entry: '#/components/schemas/InventoryEntryReference'
-          order-edit: '#/components/schemas/OrderEditReference'
-          order: '#/components/schemas/OrderReference'
-          payment-method: '#/components/schemas/PaymentMethodReference'
-          payment: '#/components/schemas/PaymentReference'
-          product-discount: '#/components/schemas/ProductDiscountReference'
-          product: '#/components/schemas/ProductReference'
-          product-selection: '#/components/schemas/ProductSelectionReference'
-          product-tailoring: '#/components/schemas/ProductTailoringReference'
-          product-type: '#/components/schemas/ProductTypeReference'
-          quote: '#/components/schemas/QuoteReference'
-          quote-request: '#/components/schemas/QuoteRequestReference'
-          recurrence-policy: '#/components/schemas/RecurrencePolicyReference'
-          recurring-order: '#/components/schemas/RecurringOrderReference'
-          reservation: '#/components/schemas/ReservationReference'
-          review: '#/components/schemas/ReviewReference'
-          shipping-method: '#/components/schemas/ShippingMethodReference'
-          shopping-list: '#/components/schemas/ShoppingListReference'
-          staged-quote: '#/components/schemas/StagedQuoteReference'
-          standalone-price: '#/components/schemas/StandalonePriceReference'
-          state: '#/components/schemas/StateReference'
-          store: '#/components/schemas/StoreReference'
-          tax-category: '#/components/schemas/TaxCategoryReference'
           type: '#/components/schemas/TypeReference'
-          variant: '#/components/schemas/VariantReference'
-          zone: '#/components/schemas/ZoneReference'
       required:
       - id
       - typeId
@@ -380,7 +341,6 @@ components:
         propertyName: typeId
         mapping:
           associate-role: '#/components/schemas/AssociateRoleKeyReference'
-          business-unit: '#/components/schemas/BusinessUnitKeyReference'
           store: '#/components/schemas/StoreKeyReference'
       required:
       - key
@@ -453,117 +413,6 @@ components:
             $ref: '#/components/schemas/CustomerGroup'
     ErrorObject:
       type: object
-      discriminator:
-        propertyName: code
-        mapping:
-          BusinessUnitAmbiguous: '#/components/schemas/AgentBusinessUnitAmbiguousError'
-          BusinessUnitLimitExceeded: '#/components/schemas/AgentBusinessUnitLimitExceededError'
-          BusinessUnitUnresolved: '#/components/schemas/AgentBusinessUnitUnresolvedError'
-          ExtractionFailed: '#/components/schemas/AgentExtractionFailedError'
-          FeatureDisabled: '#/components/schemas/AgentFeatureDisabledError'
-          MissingCountry: '#/components/schemas/AgentMissingCountryError'
-          MissingCustomerEmail: '#/components/schemas/AgentMissingCustomerEmailError'
-          MissingEntityType: '#/components/schemas/AgentMissingEntityTypeError'
-          NoLineItemsExtracted: '#/components/schemas/AgentNoLineItemsExtractedError'
-          OutOfScope: '#/components/schemas/AgentOutOfScopeError'
-          ProductSearchNotEnabled: '#/components/schemas/AgentProductSearchNotEnabledError'
-          ProductsNotFound: '#/components/schemas/AgentProductsNotFoundError'
-          QuoteRequestCreationFailed: '#/components/schemas/AgentQuoteRequestCreationFailedError'
-          StoreAmbiguous: '#/components/schemas/AgentStoreAmbiguousError'
-          StoreDistributionChannelsUnsupported: '#/components/schemas/AgentStoreDistributionChannelsUnsupportedError'
-          StoreUnresolved: '#/components/schemas/AgentStoreUnresolvedError'
-          AnonymousIdAlreadyInUse: '#/components/schemas/AnonymousIdAlreadyInUseError'
-          AssociateMissingPermission: '#/components/schemas/AssociateMissingPermissionError'
-          AttributeDefinitionAlreadyExists: '#/components/schemas/AttributeDefinitionAlreadyExistsError'
-          AttributeDefinitionTypeConflict: '#/components/schemas/AttributeDefinitionTypeConflictError'
-          AttributeNameDoesNotExist: '#/components/schemas/AttributeNameDoesNotExistError'
-          BadGateway: '#/components/schemas/BadGatewayError'
-          BulkOperationMaxItemsExceeded: '#/components/schemas/BulkOperationMaxItemsExceededError'
-          ConcurrentModification: '#/components/schemas/ConcurrentModificationError'
-          ContentTooLarge: '#/components/schemas/ContentTooLargeError'
-          CountryNotConfiguredInStore: '#/components/schemas/CountryNotConfiguredInStoreError'
-          DiscountCodeNonApplicable: '#/components/schemas/DiscountCodeNonApplicableError'
-          DuplicateAttributeValue: '#/components/schemas/DuplicateAttributeValueError'
-          DuplicateAttributeValues: '#/components/schemas/DuplicateAttributeValuesError'
-          DuplicateEnumValues: '#/components/schemas/DuplicateEnumValuesError'
-          DuplicateField: '#/components/schemas/DuplicateFieldError'
-          DuplicateFieldWithConflictingResource: '#/components/schemas/DuplicateFieldWithConflictingResourceError'
-          DuplicatePriceKey: '#/components/schemas/DuplicatePriceKeyError'
-          DuplicatePriceScope: '#/components/schemas/DuplicatePriceScopeError'
-          DuplicateStandalonePriceScope: '#/components/schemas/DuplicateStandalonePriceScopeError'
-          DuplicateVariantValues: '#/components/schemas/DuplicateVariantValuesError'
-          EditPreviewFailed: '#/components/schemas/EditPreviewFailedError'
-          EnumKeyAlreadyExists: '#/components/schemas/EnumKeyAlreadyExistsError'
-          EnumKeyDoesNotExist: '#/components/schemas/EnumKeyDoesNotExistError'
-          EnumValueIsUsed: '#/components/schemas/EnumValueIsUsedError'
-          EnumValuesMustMatch: '#/components/schemas/EnumValuesMustMatchError'
-          ExactLockConflict: '#/components/schemas/ExactLockConflictError'
-          ExpiredCustomerEmailToken: '#/components/schemas/ExpiredCustomerEmailTokenError'
-          ExpiredCustomerPasswordToken: '#/components/schemas/ExpiredCustomerPasswordTokenError'
-          ExtensionBadResponse: '#/components/schemas/ExtensionBadResponseError'
-          ExtensionChainTooDeep: '#/components/schemas/ExtensionChainTooDeepError'
-          ExtensionChainTooWide: '#/components/schemas/ExtensionChainTooWideError'
-          ExtensionCircularDependency: '#/components/schemas/ExtensionCircularDependencyError'
-          ExtensionDependencyExists: '#/components/schemas/ExtensionDependencyExistsError'
-          ExtensionNoResponse: '#/components/schemas/ExtensionNoResponseError'
-          ExtensionPredicateEvaluationFailed: '#/components/schemas/ExtensionPredicateEvaluationFailedError'
-          ExtensionUpdateActionsFailed: '#/components/schemas/ExtensionUpdateActionsFailedError'
-          ExternalOAuthFailed: '#/components/schemas/ExternalOAuthFailedError'
-          FeatureRemoved: '#/components/schemas/FeatureRemovedError'
-          General: '#/components/schemas/GeneralError'
-          insufficient_scope: '#/components/schemas/InsufficientScopeError'
-          InternalConstraintViolated: '#/components/schemas/InternalConstraintViolatedError'
-          InvalidCredentials: '#/components/schemas/InvalidCredentialsError'
-          InvalidCurrentPassword: '#/components/schemas/InvalidCurrentPasswordError'
-          InvalidField: '#/components/schemas/InvalidFieldError'
-          InvalidInput: '#/components/schemas/InvalidInputError'
-          InvalidItemShippingDetails: '#/components/schemas/InvalidItemShippingDetailsError'
-          InvalidJsonInput: '#/components/schemas/InvalidJsonInputError'
-          InvalidOperation: '#/components/schemas/InvalidOperationError'
-          InvalidSubject: '#/components/schemas/InvalidSubjectError'
-          invalid_token: '#/components/schemas/InvalidTokenError'
-          LanguageUsedInStores: '#/components/schemas/LanguageUsedInStoresError'
-          LineItemQuantityAboveLimit: '#/components/schemas/LineItemQuantityAboveLimitError'
-          LineItemQuantityBelowLimit: '#/components/schemas/LineItemQuantityBelowLimitError'
-          LockedField: '#/components/schemas/LockedFieldError'
-          MatchingPriceNotFound: '#/components/schemas/MatchingPriceNotFoundError'
-          MaxCartDiscountsReached: '#/components/schemas/MaxCartDiscountsReachedError'
-          MaxDiscountGroupsReached: '#/components/schemas/MaxDiscountGroupsReachedError'
-          MaxResourceLimitExceeded: '#/components/schemas/MaxResourceLimitExceededError'
-          MaxStoreReferencesReached: '#/components/schemas/MaxStoreReferencesReachedError'
-          MissingRoleOnChannel: '#/components/schemas/MissingRoleOnChannelError'
-          MissingTaxRateForCountry: '#/components/schemas/MissingTaxRateForCountryError'
-          MoneyOverflow: '#/components/schemas/MoneyOverflowError'
-          NoMatchingProductDiscountFound: '#/components/schemas/NoMatchingProductDiscountFoundError'
-          ObjectNotFound: '#/components/schemas/ObjectNotFoundError'
-          OutOfStock: '#/components/schemas/OutOfStockError'
-          OverCapacity: '#/components/schemas/OverCapacityError'
-          OverlappingPriceValidity: '#/components/schemas/OverlappingPriceValidityError'
-          OverlappingStandalonePriceValidity: '#/components/schemas/OverlappingStandalonePriceValidityError'
-          PendingOperation: '#/components/schemas/PendingOperationError'
-          PriceChanged: '#/components/schemas/PriceChangedError'
-          ProductAssignmentMissing: '#/components/schemas/ProductAssignmentMissingError'
-          ProductPresentWithDifferentVariantSelection: '#/components/schemas/ProductPresentWithDifferentVariantSelectionError'
-          ProjectNotConfiguredForLanguages: '#/components/schemas/ProjectNotConfiguredForLanguagesError'
-          QueryComplexityLimitExceeded: '#/components/schemas/QueryComplexityLimitExceededError'
-          QueryTimedOut: '#/components/schemas/QueryTimedOutError'
-          RecurringOrderFailure: '#/components/schemas/RecurringOrderFailureError'
-          ReferenceExists: '#/components/schemas/ReferenceExistsError'
-          ReferencedResourceNotFound: '#/components/schemas/ReferencedResourceNotFoundError'
-          RequiredField: '#/components/schemas/RequiredFieldError'
-          ResourceNotFound: '#/components/schemas/ResourceNotFoundError'
-          ResourceSizeLimitExceeded: '#/components/schemas/ResourceSizeLimitExceededError'
-          SearchDeactivated: '#/components/schemas/SearchDeactivatedError'
-          SearchExecutionFailure: '#/components/schemas/SearchExecutionFailureError'
-          SearchFacetPathNotFound: '#/components/schemas/SearchFacetPathNotFoundError'
-          SearchIndexingInProgress: '#/components/schemas/SearchIndexingInProgressError'
-          SearchNotReady: '#/components/schemas/SearchNotReadyError'
-          SemanticError: '#/components/schemas/SemanticErrorError'
-          ShippingMethodDoesNotMatchCart: '#/components/schemas/ShippingMethodDoesNotMatchCartError'
-          StoreCartDiscountsLimitReached: '#/components/schemas/StoreCartDiscountsLimitReachedError'
-          SyntaxError: '#/components/schemas/SyntaxErrorError'
-          Unauthorized: '#/components/schemas/UnauthorizedError'
-          ValidityLockConflict: '#/components/schemas/ValidityLockConflictError'
       required:
       - code
       - message
@@ -668,21 +517,6 @@ components:
             $ref: '#/components/schemas/Customer'
     FieldType:
       type: object
-      discriminator:
-        propertyName: name
-        mapping:
-          Boolean: '#/components/schemas/CustomFieldBooleanType'
-          DateTime: '#/components/schemas/CustomFieldDateTimeType'
-          Date: '#/components/schemas/CustomFieldDateType'
-          Enum: '#/components/schemas/CustomFieldEnumType'
-          LocalizedEnum: '#/components/schemas/CustomFieldLocalizedEnumType'
-          LocalizedString: '#/components/schemas/CustomFieldLocalizedStringType'
-          Money: '#/components/schemas/CustomFieldMoneyType'
-          Number: '#/components/schemas/CustomFieldNumberType'
-          Reference: '#/components/schemas/CustomFieldReferenceType'
-          Set: '#/components/schemas/CustomFieldSetType'
-          String: '#/components/schemas/CustomFieldStringType'
-          Time: '#/components/schemas/CustomFieldTimeType'
       required:
       - name
       properties:
@@ -718,32 +552,6 @@ components:
           type: string
     ProjectUpdateAction:
       type: object
-      discriminator:
-        propertyName: action
-        mapping:
-          changeBusinessUnitSearchStatus: '#/components/schemas/ProjectChangeBusinessUnitSearchStatusAction'
-          changeMyBusinessUnitStatusOnCreation: '#/components/schemas/ProjectChangeBusinessUnitStatusOnCreationAction'
-          changeCartsConfiguration: '#/components/schemas/ProjectChangeCartsConfigurationAction'
-          changeCountries: '#/components/schemas/ProjectChangeCountriesAction'
-          changeCountryTaxRateFallbackEnabled: '#/components/schemas/ProjectChangeCountryTaxRateFallbackEnabledAction'
-          changeCurrencies: '#/components/schemas/ProjectChangeCurrenciesAction'
-          changeCustomerSearchStatus: '#/components/schemas/ProjectChangeCustomerSearchStatusAction'
-          changeLanguages: '#/components/schemas/ProjectChangeLanguagesAction'
-          changeMessagesConfiguration: '#/components/schemas/ProjectChangeMessagesConfigurationAction'
-          changeMessagesEnabled: '#/components/schemas/ProjectChangeMessagesEnabledAction'
-          changeName: '#/components/schemas/ProjectChangeNameAction'
-          changeOrderSearchStatus: '#/components/schemas/ProjectChangeOrderSearchStatusAction'
-          changePriceRoundingMode: '#/components/schemas/ProjectChangePriceRoundingModeAction'
-          changeProductSearchIndexingEnabled: '#/components/schemas/ProjectChangeProductSearchIndexingEnabledAction'
-          changeShoppingListsConfiguration: '#/components/schemas/ProjectChangeShoppingListsConfigurationAction'
-          changeTaxRoundingMode: '#/components/schemas/ProjectChangeTaxRoundingModeAction'
-          setMyBusinessUnitAssociateRoleOnCreation: '#/components/schemas/ProjectSetBusinessUnitAssociateRoleOnCreationAction'
-          setDiscountsConfiguration: '#/components/schemas/ProjectSetDiscountsConfigurationAction'
-          setExternalOAuth: '#/components/schemas/ProjectSetExternalOAuthAction'
-          setProductCatalogModel: '#/components/schemas/ProjectSetProductCatalogModelAction'
-          setReleaseExpiredReservations: '#/components/schemas/ProjectSetReleaseExpiredReservationsAction'
-          setReservationExpirationInMinutes: '#/components/schemas/ProjectSetReservationExpirationInMinutesAction'
-          setShippingRateInputType: '#/components/schemas/ProjectSetShippingRateInputTypeAction'
       required:
       - action
       properties:
@@ -970,12 +778,6 @@ components:
         ExternalAuth: If set, the `password` field is optional on [CustomerDraft](ctp:api:type:CustomerDraft) and is not present on [Customer](ctp:api:type:Customer).
     ShippingRateInputType:
       type: object
-      discriminator:
-        propertyName: type
-        mapping:
-          CartClassification: '#/components/schemas/CartClassificationType'
-          CartScore: '#/components/schemas/CartScoreType'
-          CartValue: '#/components/schemas/CartValueType'
       required:
       - type
       properties:
@@ -1326,7 +1128,7 @@ components:
         '
       flows:
         clientCredentials:
-          tokenUrl: https://auth.europe-west1.gcp.commercetools.com/oauth/token
+          tokenUrl: https://auth.us-central1.gcp.commercetools.com/oauth/token
           scopes:
             view_api_clients:{projectKey}: ''
             manage_api_clients:{projectKey}: ''

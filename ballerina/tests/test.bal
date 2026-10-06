@@ -66,10 +66,17 @@ isolated function testGetProject() returns error? {
 isolated function testUpdateProject() returns error? {
     Client commercetools = check getClient();
     Project current = check commercetools->getProject(projectKey);
+    // Live runs keep the current name so the real Project is not renamed.
+    string newName = isLiveServer ? current.name : "Test Project Renamed";
     Project updated = check commercetools->updateProject(projectKey, {
         version: current.version,
-        actions: [{action: "changeName", "name": current.name}]
+        actions: [{action: "changeName", "name": newName}]
     });
     test:assertEquals(updated.'key, projectKey);
-    test:assertTrue(updated.version >= current.version);
+    test:assertEquals(updated.name, newName);
+    if isLiveServer {
+        test:assertTrue(updated.version >= current.version);
+    } else {
+        test:assertTrue(updated.version > current.version);
+    }
 }

@@ -124,6 +124,9 @@ service / on ep0 {
 #   is unacceptable. If these errors persist, [should be reported](https://support.commercetools.com/).)
     resource function get [string projectKey]() returns Project|ErrorResponseBadRequest|ErrorResponseUnauthorized|ErrorResponseForbidden|http:NotFound|ErrorResponseInternalServerError|ErrorResponseBadGateway|ErrorResponseServiceUnavailable {
         lock {
+            if projectKey != mockProject.'key {
+                return http:NOT_FOUND;
+            }
             return mockProject.clone();
         }
     }
@@ -148,10 +151,13 @@ service / on ep0 {
 #   i.e. that has been modified by another client since the last time it was retrieved.
 #   The client application should resolve the conflict (with or without involving the end user)
 #   before retrying the request.)
-    resource function post [string projectKey](@http:Payload ProjectUpdate payload) returns ProjectOk|ErrorResponseConflict {
+    resource function post [string projectKey](@http:Payload ProjectUpdate payload) returns ProjectOk|ErrorResponseConflict|http:NotFound {
         int expectedVersion = payload.version;
         ProjectUpdateAction[] & readonly actions = payload.actions.cloneReadOnly();
         lock {
+            if projectKey != mockProject.'key {
+                return http:NOT_FOUND;
+            }
             if expectedVersion != mockProject.version {
                 return <ErrorResponseConflict>{
                     body: {

@@ -31,7 +31,7 @@ public type StoreKeyReference record {
 public type OAuth2ClientCredentialsGrantConfig record {|
     *http:OAuth2ClientCredentialsGrantConfig;
     # Token URL
-    string tokenUrl = "https://auth.europe-west1.gcp.commercetools.com/oauth/token";
+    string tokenUrl = "https://auth.us-central1.gcp.commercetools.com/oauth/token";
 |};
 
 public type Address record {
